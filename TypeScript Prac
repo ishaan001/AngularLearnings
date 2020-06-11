@@ -1,0 +1,26 @@
+Type Script Prac
+
+
+for (let i = 0; i < 10; i++){
+    console.log("value is : " + i);
+}
+
+let myArray = [10, 12, 15, 18, 19];
+
+//for OF loop
+for (var val of myArray) {
+    console.log(val)
+}
+
+// for IN loop
+for (var index in myArray) {
+    console.log(index);
+}
+
+
+function Meet(greeting:string, name:string = "SAm") : string {
+    return greeting + ' ' + name + '.' ;
+}
+
+console.log(Meet('HOLA', 'ishaan'));
+console.log(Meet('HERO'));
