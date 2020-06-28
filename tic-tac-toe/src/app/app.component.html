@@ -18,7 +18,7 @@
 
      </div>
 
-     <div class="col col-lg-6 text-center">
+     <div class="col col-lg-6 text-center" *ngIf="winMessage">
          <h1 class="text-uppercase">GameOver {{winMessage}}</h1>
          <button 
             (click)="reloadGame()"

@@ -23,7 +23,7 @@ export class AppComponent {
       this.itemArray[itemNumber] = this.isCross ? 'cross' : 'circle'
       this.isCross = !this.isCross;
     } else {
-      return this.toastr.info('already filled ');
+      return this.toastr.info('already filled');
     }
 
     this.checkIsWinner();
@@ -49,7 +49,19 @@ export class AppComponent {
       this.winMessage = `${this.itemArray[0]} Won`;  
     } else if( this.itemArray[2] === this.itemArray[4] && this.itemArray[2] === this.itemArray[6] && this.itemArray[2] !== 'empty' ){
       this.winMessage = `${this.itemArray[0]} Won`;  
-    } 
+    } else if (
+      this.itemArray[0] !== 'empty' &&
+      this.itemArray[1] !== 'empty' &&
+      this.itemArray[2] !== 'empty' &&
+      this.itemArray[3] !== 'empty' &&
+      this.itemArray[4] !== 'empty' &&
+      this.itemArray[5] !== 'empty' &&
+      this.itemArray[6] !== 'empty' &&
+      this.itemArray[7] !== 'empty' &&
+      this.itemArray[8] !== 'empty'  
+    ) {
+      this.winMessage = `It's a Tie Play Again`;
+    }
   };
 
   reloadGame = () => {
