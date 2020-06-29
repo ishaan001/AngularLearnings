@@ -72,6 +72,26 @@ fromEvent(document,'click')
 )
 ```
 
+### Understanding Observable 
+```js
+import { Observable, Subscriber } from  'rxjs';
+ 
+const observable = new Observable( Subscriber=> {
+  Subscriber.next(1);
+  Subscriber.next(2);
+  Subscriber.next(3);
+
+  setTimeout( ()=>{
+  Subscriber.next(3);
+  Subscriber.complete();  
+  },2000)
+})
+
+// 2000 -> it is the observing time of the event
+// complete() - more like a return statement
+
+```
+
 ## Further help
 
 - [API Documentation](https://rxjs.dev/)
