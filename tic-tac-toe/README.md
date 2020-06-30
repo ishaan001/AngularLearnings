@@ -102,18 +102,20 @@ const observable = new Observable( susbscriber=> {
   susbscriber.next(3);
 
   setTimeout( ()=>{
-  susbscriber.next(3);
+  susbscriber.next(4);
   susbscriber.complete();  
   },2000)
 })
 
 console.log('I am About to Subscribe');
 
-observable.subscribe({
-  next(x){ console.log("We got :"+x);},
-  error(err){ console.log('error is '+err);},
-  complete(){console.log('COMPLETED');}
-})
+const observer = {
+  next: x => console.log('Observer got a next value: ' + x),
+  error: err => console.error('Observer got an error: ' + err),
+  complete: () => console.log('Observer got a complete notification'),
+};
+
+observable.subscribe(observer)
 
 console.log("ALL DONE ISHAAN");
 
