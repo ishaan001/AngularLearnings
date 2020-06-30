@@ -120,6 +120,46 @@ observable.subscribe(observer)
 console.log("ALL DONE ISHAAN");
 
 ```
+### How to unsubscribe  ?
+IF we don't want to observe a particular case we do the unsubscribe.
+ after unsubscribing it won't wait' fro 2 millisecond for this
+```js
+ setTimeout( ()=>{
+  susbscriber.next(4);
+  susbscriber.complete();  
+  },2000)
+```
+full example 
+```js
+import { Observable } from  'rxjs';
+ 
+const observable = new Observable( susbscriber=> {
+  susbscriber.next(1);
+  susbscriber.next(2);
+  susbscriber.next(3);
+
+  setTimeout( ()=>{
+  susbscriber.next(4);
+  susbscriber.complete();  
+  },2000)
+})
+
+console.log('I am About to Subscribe');
+
+const observer = {
+  next: x => console.log('Observer got a next value: ' + x),
+  error: err => console.error('Observer got an error: ' + err),
+  complete: () => console.log('Observer got a complete notification'),
+};
+
+const subscription = observable.subscribe(observer);
+
+subscription.unsubscribe();
+
+console.log("ALL DONE ISHAAN");
+
+```
+
 
 ## Further help
 
