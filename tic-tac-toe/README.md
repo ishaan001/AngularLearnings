@@ -92,6 +92,33 @@ const observable = new Observable( Subscriber=> {
 
 ```
 
+### What is observer
+```js
+import { Observable } from  'rxjs';
+ 
+const observable = new Observable( susbscriber=> {
+  susbscriber.next(1);
+  susbscriber.next(2);
+  susbscriber.next(3);
+
+  setTimeout( ()=>{
+  susbscriber.next(3);
+  susbscriber.complete();  
+  },2000)
+})
+
+console.log('I am About to Subscribe');
+
+observable.subscribe({
+  next(x){ console.log("We got :"+x);},
+  error(err){ console.log('error is '+err);},
+  complete(){console.log('COMPLETED');}
+})
+
+console.log("ALL DONE ISHAAN");
+
+```
+
 ## Further help
 
 - [API Documentation](https://rxjs.dev/)
