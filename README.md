@@ -1,4 +1,4 @@
-## <img src="./ng.png" alt="Anular Logo" width="86" height="86"> Angular 
+## <img src="./ng.png" alt="Anular Logo" width="250" height="150"> Angular 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
 
