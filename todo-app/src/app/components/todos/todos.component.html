@@ -7,14 +7,15 @@
         [checked]="todo.isCompleted"
       >
     </span>
-    <span>
+    <span [ngClass]="{completedTodo : todo.isCompleted}">
       {{ todo.title | uppercase}}
     </span>
     <span>
-      {{ todo.date }}
+      {{ todo.date | date}}
     </span>
-    <span>
-      Trash 
+    <span (click)="deleteTodo(todo)" >
+      <fa-icon [icon]="faTrashAlt" ></fa-icon>
+     
     </span>
   </li>
 </ul>

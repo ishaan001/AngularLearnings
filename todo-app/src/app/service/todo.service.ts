@@ -47,8 +47,8 @@ export class TodoService {
    }
 
    deleteTodo(todo : Todo){
-     const index = this.todos.findIndex( x => x.id == todo.id);
-     this.todos.slice(index, 1);
+     const index = this.todos.findIndex( (x) => x.id == todo.id);
+     this.todos.splice(index, 1);
     }
 
 }
