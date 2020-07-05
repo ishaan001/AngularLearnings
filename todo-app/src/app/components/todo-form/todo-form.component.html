@@ -8,5 +8,6 @@
   <div class="input-group-append">
     <button (click)="handleAdd()" class="btn btn-primary">Add Todo</button>
   </div>
-
 </div>
+
+<p *ngIf="isEmpty" class="text-white bg-dark">{{ message }}</p>

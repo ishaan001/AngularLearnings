@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Todo } from './../../model/Todo';
 import { v4 as uuidv4 } from "uuid";
 import { TodoService } from './../../service/todo.service'
+import { empty } from 'rxjs';
 
 @Component({
   selector: 'app-todo-form',
@@ -10,7 +11,9 @@ import { TodoService } from './../../service/todo.service'
 })
 export class TodoFormComponent implements OnInit {
 
-  todoTitle :string;
+  todoTitle :string = '';
+  isEmpty : boolean = false;
+  message : string;
   constructor(private todoService : TodoService) { }
 
   ngOnInit(): void {
@@ -23,9 +26,13 @@ export class TodoFormComponent implements OnInit {
       isCompleted :false,
       date : new Date(),
     };
-
-    this.todoService.addTodos(todo);
+    if(todo.title === '' || todo.title == ' '){
+      this.isEmpty = true;
+      this.message = 'text box can\'t be empty';
+    }else{
+      this.isEmpty = false;
+      this.todoService.addTodos(todo);
+    } 
     this.todoTitle = '';
   }
-
 }
