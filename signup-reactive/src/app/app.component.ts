@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
       confirmPassword : ['',Validators.required],
       acceptTandC : [false, Validators.requiredTrue]
     },{
-      validators: PasswordChecker('password','confirmPassword');
+      validators: PasswordChecker('password','confirmPassword')
     });
 
   }
