@@ -18,16 +18,20 @@ export class AppComponent implements OnInit {
   ngOnInit(){
     this.registerForm = this.formBuilder.group({
       //['holds default value', hold the pre build validations]
-      firstName : ['',Validators.required],
-      lastName : ['',Validators.required],
-      email : ['',Validators.required, Validators.email],
-      password : ['',Validators.required],
-      confirmPassword : ['',Validators.required],
+      firstName : ["",Validators.required],
+      lastName : ["",Validators.required],
+      email : ["",[Validators.required, Validators.email]],
+      password : ["",Validators.required],
+      confirmPassword : ["",[Validators.required,Validators.minLength(6)]],
       acceptTandC : [false, Validators.requiredTrue]
     },{
       validators: PasswordChecker('password','confirmPassword')
     });
 
+  }
+
+  get helperMethod(){
+    return this.registerForm.controls;
   }
 
   onSubmit(){
