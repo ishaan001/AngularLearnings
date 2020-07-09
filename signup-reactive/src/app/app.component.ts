@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
       lastName : ["",Validators.required],
       email : ["",[Validators.required, Validators.email]],
       password : ["",Validators.required],
-      confirmPassword : ["",[Validators.required,Validators.minLength(6)]],
+      confirmPassword : ["",[Validators.required, Validators.minLength(6)]],
       acceptTandC : [false, Validators.requiredTrue]
     },{
       validators: PasswordChecker('password','confirmPassword')

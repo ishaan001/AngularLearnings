@@ -19,8 +19,8 @@
               class="form-control" 
               [ngClass]="{ 'is-invalid' : submitted && helperMethod.firstName.errors}"
               />
-            <div class="text-warning">
-              <div>
+            <div *ngIf="helperMethod.firstName.touched || submitted && helperMethod.firstName.errors" class="text-warning">
+              <div *ngIf=" helperMethod.firstName.errors.required ">
                 First Name is required
               </div>
             </div>
@@ -32,8 +32,8 @@
               class="form-control" 
               [ngClass]="{ 'is-invalid' : submitted && helperMethod.lastName.errors }"   
             />
-            <div class="text-warning">
-              <div>
+            <div *ngIf="helperMethod.lastName.touched || submitted && helperMethod.lastName.errors " class="text-warning">
+              <div *ngIf=" helperMethod.lastName.errors.required ">
                 Last Name is required
               </div>
             </div>
@@ -46,16 +46,16 @@
           class="form-control" 
           [ngClass]="{ 'is-invalid' : submitted && helperMethod.email.errors}"
          />
-          <div class="text-warning">
-            <div>Email is required</div>
-            <div>
+          <div *ngIf="helperMethod.email.touched && helperMethod.email.errors" class="text-warning">
+            <div *ngIf="helperMethod.email.errors.required">Email is required</div>
+            <div *ngIf="helperMethod.email.errors.email">
               Email must be a valid email address
             </div>
           </div>
         </div>
 
-        <ng-container>
-          <div class="text-danger">
+        <ng-container *ngIf="helperMethod.email.touched && helperMethod.email.errors">
+          <div *ngIf="helperMethod.email.errors.required" class="text-danger">
             Value is required.
           </div>
         </ng-container>
@@ -67,9 +67,9 @@
             class="form-control" 
             [ngClass]="{ 'is-invalid' : submitted && helperMethod.password.errors}"
             />
-            <div class="text-warning">
-              <div>Password is required</div>
-              <div>
+            <div *ngIf="helperMethod.password.touched && helperMethod.password.errors" class="text-warning">
+              <div *ngIf="helperMethod.password.errors.required">Password is required</div>
+              <div *ngIf="helperMethod.password.errors.minlength">
                 Password must be at least 6 characters
               </div>
             </div>
@@ -81,11 +81,11 @@
             class="form-control" 
             [ngClass]="{ 'is-invalid' : submitted && helperMethod.confirmPassword.errors}" 
              />
-            <div class="text-warning">
-              <div>
+            <div *ngIf="helperMethod.confirmPassword.touched && helperMethod.confirmPassword.errors" class="text-warning">
+              <div  *ngIf="helperMethod.confirmPassword.errors.required" >
                 Confirm Password is required
               </div>
-              <div>
+              <div  *ngIf="helperMethod.confirmPassword.errors.mustmatch">
                 Passwords must match
               </div>
             </div>
@@ -96,10 +96,10 @@
           formControlName = "acceptTandC"
             [ngClass]="{ 'is-invalid' : submitted && helperMethod.acceptTandC.errors}" 
              type="checkbox" id="acceptTerms" class="form-check-input" />
-          <label for="acceptTerms" class="form-check-label"
-            >Accept Terms & Conditions</label
-          >
-          <div class="text-warning">
+          <label for="acceptTerms" class="form-check-label" *ngIf=" submitted && helperMethod.acceptTandC.errors">
+            Accept Terms & Conditions
+          </label>
+          <div class="text-warning" *ngIf="helperMethod.acceptTandC.errors.required">
             Accept Ts & Cs is required
           </div>
         </div>
