@@ -9,11 +9,20 @@ import { faEnvelope, faMapMarkedAlt, faPhone, faDatabase } from '@fortawesome/fr
 export class CardComponent implements OnInit {
 
   //added decorator showing the value is comming from other component
-  @Input() user;
+  @Input() 
+  user;
 
+  faEnvelope = faEnvelope;
+  faMapMarkedAlt = faMapMarkedAlt;
+  faPhone = faPhone;
+  faDatabase = faDatabase;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  refresh(): void {
+    window.location.reload();
+}
 }
