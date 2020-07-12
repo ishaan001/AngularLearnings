@@ -3,7 +3,15 @@
      <div class="col col-md-4 offset-md-4">
        <div class="text-center">
          <!--user property is being passed to the card componnent fro the app component-->
-         <app-card [user]="user"></app-card>
+         <app-card [user]="user" *ngIf="user; else loadingBlock"></app-card>
+
+         <ng-template #loadingBlock >
+           <div class="text-center mt-5">
+             <div class="spinner-border spinner-grow-mg text-white" role="status">
+               loading....
+             </div>
+           </div>
+         </ng-template>
        </div>
      </div>
    </div>
