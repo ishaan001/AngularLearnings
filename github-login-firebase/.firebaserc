@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "github-login-firebase-51b96": {
+      "hosting": {
+        "github-login-firebase": [
+          "github-login-firebase-51b96"
+        ]
+      }
+    }
+  }
+}
