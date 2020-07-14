@@ -166,3 +166,8 @@ console.log("ALL DONE ISHAAN");
 - [API Documentation](https://rxjs.dev/)
 - [Visual understanding](https://rxviz.com/) 
 
+# <img src="./firebase_logo.png" alt="firebase Logo" width="86" height="86"> Angular Fire, Firebase Auth
+ 
+## Important
+how to use Firebase for auth. in angular
+
