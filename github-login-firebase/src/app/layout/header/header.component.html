@@ -1,1 +1,18 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" [routerLink]="['/']" >
+    <img src="../../../assets/img.png" width="30" height="30" alt="">
+    IVD's GITHUB FINDER APP
+</a>
+ <div class="navbar-collapse">
+   <div class="navbar-nav ml-auto">
+     <div *ngIf="email" class= "navbar-text float-left">
+       {{email}}
+     </div>
+     <a class="nav-item nav-link" [routerLink] = "['/']">Home</a>
+     <a class="nav-item nav-link" *ngIf="!email" [routerLink] = "['/signin']" routerLinkActive="active">Signin</a>
+     <a class="nav-item nav-link" *ngIf="!email" [routerLink] = "['/signup']"  routerLinkActive="active">Signup</a>
+     <a class="nav-item nav-link" *ngIf="email" [routerLink] = "['/']" (click)="handlesSignOut()">Logout</a>
+   </div>
+ </div>
+
+</nav>
