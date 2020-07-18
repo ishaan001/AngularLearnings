@@ -1,1 +1,17 @@
-<p>user-card works!</p>
+<div class="card user-card text-white">
+    <div class="background bg-info">
+      <img class="img-fluid rounded-circle profile-pic border-2 border-white"
+           [src]="user.avatar_url"
+            alt="user Avatar">
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">{{user.name}}</h5>
+      <p class="card-text">BIO: {{user.bio}}</p>
+      <p class="card-text">Company: {{user.company}}</p>
+      <p class="card-text">Public Repos: {{user.public_repos}}</p>
+      <p class="card-text">Followers: {{user.followers}}</p> 
+      <p class="card-text">Following: {{user.following}}</p>
+      <p class="card-text">Update At : {{user.update_at | date: "short"}}</p>
+    </div>
+</div>
