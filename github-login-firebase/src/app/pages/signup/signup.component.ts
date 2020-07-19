@@ -20,7 +20,22 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
   }
+ 
+  onSubmit(f: NgForm){
+    
+    const {email} = f.form.value;
+    const password = f.controls['password'].value;
 
-  
+    this.authService.signUp(email,password)
+    .then((res) => {
+      this.router.navigateByUrl('/');
+      this.toastr.success('SignUp Sucess');
+    })
+    .catch((err)=>{
+      console.log(err.message);
+      this.toastr.error('signup failed');
+    })
+
+  }
 
 }
