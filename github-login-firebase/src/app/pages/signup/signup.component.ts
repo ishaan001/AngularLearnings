@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
     this.authService.signUp(email,password)
     .then((res) => {
       this.router.navigateByUrl('/');
-      this.toastr.success('SignUp Sucess');
+      this.toastr.success('SignUp Success');
     })
     .catch((err)=>{
       console.log(err.message);
