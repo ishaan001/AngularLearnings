@@ -170,4 +170,15 @@ console.log("ALL DONE ISHAAN");
  
 ## Important
 how to use Firebase for auth. in angular
+here Firebase is being used for authentication and deploying the build file 
+
+commands for the deployment
+```
+	SignIn ot the google accoand get the FireBase API key
+	and store it into environment folder
+	
+	
+	
+```
+
 
