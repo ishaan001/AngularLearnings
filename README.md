@@ -176,8 +176,23 @@ commands for the deployment
 ```
 	SignIn ot the google accoand get the FireBase API key
 	and store it into environment folder
+
+	-	Traverse to the project and type ng build --prod
+	-	Dist name folder will be made under file structure
+	-	$ npm install -g firebase-tools
+	-	$ firebase login
+	-	$ firebase init
 	
-	
+	-	Upon initializing the project you’ll be asked a few questions:
+
+			Firebase CLI features…: Hosting.
+			Database rules file: You can keep that default file name that they provide, or change it if you prefer. This file will be created and will contain the database rules for your app.
+			Public directory: Type in dist, because this is where your production-ready Angular app assets are.
+			Configure as single-page app: Most of the time you’ll say yes (y) for this one.
+			Overwrite index.html: No.
+	-	$ firebase deploy
+	-	$ firebase open
+			
 	
 ```
 
