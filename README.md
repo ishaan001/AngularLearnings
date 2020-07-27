@@ -192,8 +192,9 @@ commands for the deployment
 			Overwrite index.html: No.
 	-	$ firebase deploy
 	-	$ firebase open
+	
 			
 	
 ```
-
+BY - Ishaan Veer Dadhwal
 
